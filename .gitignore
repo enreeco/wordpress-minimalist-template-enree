@@ -133,3 +133,4 @@ wp-config-sample.php
 # Local Development
 local-config.php
 wp-config-local.php
+.release

@@ -1,0 +1,16 @@
+{
+  "name": "enree-minimal-build",
+  "version": "1.0.0",
+  "description": "Build script for Enree Minimal WordPress theme",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "clean": "node build.js --clean"
+  },
+  "dependencies": {
+    "archiver": "^5.3.1"
+  },
+  "keywords": ["wordpress", "theme", "build", "zip"],
+  "author": "Enrico Murru",
+  "license": "GPL-2.0"
+}

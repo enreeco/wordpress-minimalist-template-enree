@@ -25,9 +25,7 @@
       </div>
     </div>
     <div class="header-actions">
-      <div class="search-container">
-        <?php get_search_form(); ?>
-      </div>
+      <?php get_search_form(); ?>
     </div>
   </div>
 

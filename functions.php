@@ -64,13 +64,6 @@ add_action( 'widgets_init', 'enree_widgets_init' );
 function enree_scripts() {
   wp_enqueue_style( 'enree-style', get_stylesheet_uri(), array(), '1.0.0' );
   wp_enqueue_script( 'enree-nav', get_template_directory_uri() . '/js/navigation.js', array(), '1.0.0', true );
-  wp_enqueue_script( 'enree-search', get_template_directory_uri() . '/js/search-preview.js', array( 'jquery' ), '1.0.0', true );
-  
-  // Localize script for AJAX
-  wp_localize_script( 'enree-search', 'enree_ajax', array(
-    'ajax_url' => admin_url( 'admin-ajax.php' ),
-    'nonce'    => wp_create_nonce( 'enree_search_nonce' ),
-  ) );
 }
 add_action( 'wp_enqueue_scripts', 'enree_scripts' );
 
@@ -103,57 +96,3 @@ function enree_customize_register( $wp_customize ) {
   }
 }
 add_action( 'customize_register', 'enree_customize_register' );
-
-/**
- * AJAX search handler
- */
-function enree_ajax_search() {
-  // Verify nonce
-  if ( ! wp_verify_nonce( $_POST['nonce'], 'enree_search_nonce' ) ) {
-    wp_die( 'Security check failed' );
-  }
-
-  $search_query = sanitize_text_field( $_POST['query'] );
-  
-  if ( empty( $search_query ) ) {
-    wp_send_json_error( 'Empty search query' );
-  }
-
-  // Search query
-  $args = array(
-    'post_type'      => array( 'post', 'page' ),
-    'post_status'    => 'publish',
-    's'              => $search_query,
-    'posts_per_page' => 5,
-    'orderby'        => 'relevance',
-  );
-
-  $search_results = new WP_Query( $args );
-  
-  $results = array();
-  
-  if ( $search_results->have_posts() ) {
-    while ( $search_results->have_posts() ) {
-      $search_results->the_post();
-      
-      $results[] = array(
-        'id'        => get_the_ID(),
-        'title'     => get_the_title(),
-        'url'       => get_permalink(),
-        'excerpt'   => wp_trim_words( get_the_excerpt(), 20, '...' ),
-        'date'      => get_the_date(),
-        'type'      => get_post_type(),
-        'thumbnail' => has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'thumbnail' ) : '',
-      );
-    }
-    wp_reset_postdata();
-  }
-
-  wp_send_json_success( array(
-    'results' => $results,
-    'total'   => $search_results->found_posts,
-    'query'   => $search_query,
-  ) );
-}
-add_action( 'wp_ajax_enree_search', 'enree_ajax_search' );
-add_action( 'wp_ajax_nopriv_enree_search', 'enree_ajax_search' );
