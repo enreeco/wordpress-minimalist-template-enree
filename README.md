@@ -1,5 +1,5 @@
 
-# Enree Minimal
+# Minimal Blog by Enree.co
 
 Minimalist, compact and readable WordPress theme (black/white/gray).
 - Multi-level menu
@@ -11,7 +11,7 @@ Minimalist, compact and readable WordPress theme (black/white/gray).
 ## Installation
 1. Download the theme zip file.
 2. In WordPress backend go to **Appearance → Themes → Add New → Upload Theme** and upload the zip.
-3. Activate **Enree Minimal**.
+3. Activate **Minimal Blog by Enree.co**.
 4. Go to **Appearance → Menus** to define the main menu.
 5. Go to **Appearance → Customize → Site Identity** for logo and **Header Image** for the banner.
 6. Go to **Appearance → Widgets** to configure **Sidebar** and **Footer 1-4**.

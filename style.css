@@ -1,6 +1,6 @@
 
 /*
-Theme Name: Minimalist Enrico
+Theme Name: Minimal Blog by Enree.co
 Theme URI: https://blog.enree.co
 Author: Enrico Murru
 Author URI: https://enree.co
@@ -206,4 +206,73 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, .button:hover 
   padding: .5rem .25rem;
 }
 .pagination .prev, .pagination .next { font-weight: 600; }
+
+/* Post Navigation */
+.post-navigation {
+  margin: 2rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.nav-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+.nav-previous, .nav-next {
+  display: flex;
+  flex-direction: column;
+}
+.nav-next {
+  text-align: right;
+}
+.post-navigation a {
+  display: block;
+  padding: .75rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fafafa;
+  text-decoration: none;
+  color: #111;
+  transition: all .15s ease;
+}
+.post-navigation a:hover {
+  background: #f1f1f1;
+  border-color: #ccc;
+  transform: translateY(-1px);
+}
+.nav-subtitle {
+  display: block;
+  font-size: .85rem;
+  color: #666;
+  margin-bottom: .25rem;
+  font-weight: 500;
+}
+.nav-title {
+  display: block;
+  font-size: .95rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.nav-previous .nav-title {
+  text-align: left;
+}
+.nav-next .nav-title {
+  text-align: right;
+}
+
+/* Responsive adjustments for post navigation */
+@media (max-width: 720px) {
+  .nav-links {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .nav-next {
+    text-align: left;
+  }
+  .nav-next .nav-title {
+    text-align: left;
+  }
+}
 

@@ -16,7 +16,7 @@
       <?php endfor; ?>
     </div>
     <?php $ft = get_theme_mod( "footer_text" ); ?>
-    <div class="site-info"><?php echo $ft ? wp_kses_post( $ft ) : sprintf( "&copy; %s %s — Powered by WordPress • Tema: Enree Minimal", date("Y"), get_bloginfo("name") ); ?></div>
+    <div class="site-info"><?php echo $ft ? wp_kses_post( $ft ) : sprintf( "&copy; %s %s — Powered by WordPress • Theme: Minimal Blog by Enree.co", date("Y"), get_bloginfo("name") ); ?></div>
   </div>
 </footer>
 
