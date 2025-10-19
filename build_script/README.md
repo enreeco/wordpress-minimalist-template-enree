@@ -1,6 +1,6 @@
-# Enree Minimal Theme Builder
+# Minimal Blog by Enree.co Theme Builder
 
-A minimal Node.js build script for packaging the Enree Minimal WordPress theme.
+A minimal Node.js build script for packaging the Minimal Blog by Enree.co WordPress theme.
 
 ## Features
 
@@ -34,7 +34,7 @@ node build.js --help
 ## Output
 
 The build script creates:
-- `build_script/.release/enree-minimal.zip` - The packaged theme ready for WordPress installation
+- `build_script/.release/minimal-blog-by-enreeco.zip` - The packaged theme ready for WordPress installation
 
 ## Excluded Files/Folders
 

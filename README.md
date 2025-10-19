@@ -2,6 +2,9 @@
 # Minimal Blog by Enree.co
 
 Minimalist, compact and readable WordPress theme (black/white/gray).
+
+**Source:** [blog.enree.co](https://blog.enree.co)  
+**Author:** [Enree.co](https://enree.co)
 - Multi-level menu
 - Header banner (Custom Header Image)
 - Sidebar widgets below the menu
