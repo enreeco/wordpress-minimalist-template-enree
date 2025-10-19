@@ -5,7 +5,7 @@ const path = require('path');
 const archiver = require('archiver');
 
 // Configuration
-const THEME_NAME = 'enree-minimal';
+const THEME_NAME = 'minimal-blog-by-enreeco';
 const BUILD_DIR = path.join(__dirname, '.release');
 const THEME_SOURCE = path.join(__dirname, '..');
 const EXCLUDE_PATTERNS = [
