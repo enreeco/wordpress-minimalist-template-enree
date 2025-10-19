@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Funzioni tema Enree Minimal
