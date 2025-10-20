@@ -5,7 +5,7 @@ Theme URI: https://blog.enree.co
 Author: Enrico Murru
 Author URI: https://enree.co
 Description: Minimalist WordPress theme in black/white/gray with multi-level menu, header banner, sidebar widgets below the menu and configurable footer.
-Version: 1.0.0
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: minimal-blog-by-enreeco
@@ -157,7 +157,39 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, .button:hover 
   .footer-widgets { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 720px) {
-  .menu-toggle { display:block; padding:.8rem 0; border:none; background:none; width:100%; text-align:left; font-size:1rem; }
+  .header-actions { display: none; }
+  .menu-toggle { 
+    display: block; 
+    padding: .8rem 1rem; 
+    border: 2px solid #111; 
+    background: #fff url('images/menu.png') no-repeat center center; 
+    background-size: 24px 24px;
+    color: #fff; 
+    width: 100%; 
+    height: 50px;
+    text-align: center; 
+    font-size: 1rem; 
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .15s ease;
+    margin: .5rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    text-indent: -9999px;
+    overflow: hidden;
+    position: relative;
+  }
+  .menu-toggle:hover {
+    background: #fff url('images/menu.png') no-repeat center center;
+    background-size: 24px 24px;
+    border-color: #333;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,.15);
+  }
+  .menu-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,0,0,.2);
+  }
   .menu { display:none; flex-direction:column; gap:0; border-top:1px solid #eee; }
   .menu.open { display:flex; }
   .menu > li > a { padding:.8rem .6rem; }
